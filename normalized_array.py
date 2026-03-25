@@ -1,4 +1,5 @@
 import numpy as np
+
 def normalized_array(arr):
     # מציאת ערכי המינימום והמקסימום במערך
     arr_min = np.min(arr)
