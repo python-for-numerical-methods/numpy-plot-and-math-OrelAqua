@@ -1,5 +1,17 @@
 import numpy as np
-
+def normalized_array(arr):
+    # מציאת ערכי המינימום והמקסימום במערך
+    arr_min = np.min(arr)
+    arr_max = np.max(arr)
+    
+    # טיפול במקרה קצה: אם המקסימום והמינימום שווים, כל הערכים זהים
+    if arr_min == arr_max:
+        return np.zeros_like(arr, dtype=float)
+    
+    # חישוב הנרמול באמצעות פעולות וקטוריות בלבד (יוצר מערך חדש)
+    normalized_arr = (arr - arr_min) / (arr_max - arr_min)
+    
+    return normalized_arr
 def normalized_array(data):
     """
     מנרמלת מערך נתונים לטווח של [0, 1] לפי שיטת Min-Max Scaling.
